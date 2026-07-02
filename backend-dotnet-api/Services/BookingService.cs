@@ -447,7 +447,6 @@ public sealed class BookingService(IUnitOfWork unitOfWork, IBusinessClock busine
         var startTime = startLocal.Time;
         var endTime = endLocal.Time;
         var dayOfWeek = startLocal.Date.DayOfWeek;
-
         return await unitOfWork.Repository<StaffAvailability>().AnyAsync(item => item.StaffProfileId == staffProfileId && item.DayOfWeek == dayOfWeek && item.IsActive && item.StartTime <= startTime && item.EndTime >= endTime, cancellationToken);
     }
 
