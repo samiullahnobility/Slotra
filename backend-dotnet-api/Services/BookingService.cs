@@ -437,7 +437,6 @@ public sealed class BookingService(IUnitOfWork unitOfWork, IBusinessClock busine
             .Take(pageSize)
             .Select(appointment => ToResponse(appointment))
             .ToListAsync(cancellationToken);
-
         return ServiceResult<PagedResponse<AppointmentResponse>>.Success(new PagedResponse<AppointmentResponse>(items, page, pageSize, total));
     }
 
