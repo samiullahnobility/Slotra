@@ -9,7 +9,7 @@ Slotra is an appointment booking MVP built as a small multi-app system with one 
 - Backend API: ASP.NET Core Web API with EF Core, Identity, JWT, Swagger, repositories, services, and unit of work.
 - Admin dashboard: Angular app for admins to manage services, staff, appointments, and reporting.
 - Customer portal: Next.js app for customers to browse services, choose staff, book appointments, and manage their bookings.
-- Staff panel: Blazor app for staff to view daily appointments, update statuses, and manage availability.
+- Staff panel: React app for staff to view daily appointments, update statuses, and manage availability.
 - Notification worker: Node.js worker that reads pending notifications from the API and sends email/SMS later.
 
 ### Phase 1 Backend Scope
@@ -315,7 +315,7 @@ Main screens:
 - My appointments.
 - Cancel/reschedule appointment.
 
-### Blazor Staff Panel
+### React Staff Panel
 
 Main screens:
 
@@ -346,7 +346,7 @@ Worker responsibilities:
 7. Build staff management screens.
 8. Build appointment management screens.
 9. Build Next.js customer booking portal.
-10. Build Blazor staff panel.
+10. Build React staff panel.
 11. Build notification worker.
 12. Add automated tests.
 13. Move secrets out of `appsettings.json` before production.
