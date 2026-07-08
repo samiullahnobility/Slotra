@@ -249,7 +249,7 @@ Started in:
 admin-angular/
 ```
 
-Current first slice:
+Admin portal status: complete for MVP.
 
 - Login page.
 - JWT auth service.
@@ -258,6 +258,19 @@ Current first slice:
 - Protected admin shell layout.
 - Dashboard summary page.
 - Services CRUD page.
+- Staff CRUD page.
+- Staff detail page with service assignment.
+- Staff availability management.
+- Appointments page with filters, status updates, and notes.
+- Environment-based API URL config.
+- Loading, success, and error states on key workflows.
+- `ngx-toastr` for success/error notifications.
+- `sweetalert2` for delete/remove confirmations.
+- Search on Services and Staff lists.
+- Search on Appointments list.
+- Pagination controls for Services, Staff, and Appointments.
+- Mobile sidebar toggle.
+- Toast-only success/error notifications.
 
 Run after Node/npm is healthy:
 

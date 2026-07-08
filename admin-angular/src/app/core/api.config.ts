@@ -1,1 +1,3 @@
-export const apiBaseUrl = 'https://localhost:44301/api/v1';
+import { environment } from '../../environments/environment';
+
+export const apiBaseUrl = environment.apiBaseUrl;

@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../core/auth.service';
 
 @Component({
@@ -48,7 +49,8 @@ export class LoginComponent {
   constructor(
     private readonly fb: FormBuilder,
     private readonly auth: AuthService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly toastr: ToastrService
   ) {}
 
   submit(): void {
@@ -64,13 +66,16 @@ export class LoginComponent {
         if (!this.auth.isAdmin()) {
           this.auth.logout();
           this.error.set('This account does not have admin access.');
+          this.toastr.error('This account does not have admin access.');
           return;
         }
 
+        this.toastr.success('Signed in.');
         this.router.navigateByUrl('/');
       },
       error: () => {
         this.error.set('Login failed. Check email and password.');
+        this.toastr.error('Login failed. Check email and password.');
         this.loading.set(false);
       },
       complete: () => this.loading.set(false)

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthService } from '../core/auth.service';
 
@@ -7,17 +7,23 @@ import { AuthService } from '../core/auth.service';
   standalone: true,
   imports: [RouterLink, RouterLinkActive, RouterOutlet],
   template: `
-    <div class="admin-shell">
-      <aside class="sidebar">
-        <div>
-          <h1>Slotra</h1>
-          <p>{{ auth.currentUser()?.displayName }}</p>
-        </div>
+    <div class="admin-shell" [class.sidebar-open]="sidebarOpen()">
+      <button type="button" class="menu-toggle" (click)="sidebarOpen.set(!sidebarOpen())">Menu</button>
 
-        <nav>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
-          <a routerLink="/services" routerLinkActive="active">Services</a>
-        </nav>
+      <aside class="sidebar">
+        <div class="sidebar-main">
+          <div>
+            <h1>Slotra</h1>
+            <p>{{ auth.currentUser()?.displayName }}</p>
+          </div>
+
+          <nav>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebarOpen.set(false)">Dashboard</a>
+            <a routerLink="/appointments" routerLinkActive="active" (click)="sidebarOpen.set(false)">Appointments</a>
+            <a routerLink="/services" routerLinkActive="active" (click)="sidebarOpen.set(false)">Services</a>
+            <a routerLink="/staff" routerLinkActive="active" (click)="sidebarOpen.set(false)">Staff</a>
+          </nav>
+        </div>
 
         <button type="button" class="ghost" (click)="auth.logout()">Logout</button>
       </aside>
@@ -29,5 +35,7 @@ import { AuthService } from '../core/auth.service';
   `
 })
 export class AdminShellComponent {
+  readonly sidebarOpen = signal(false);
+
   constructor(readonly auth: AuthService) {}
 }
