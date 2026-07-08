@@ -10,29 +10,46 @@ import { AuthService } from '../../core/auth.service';
   imports: [ReactiveFormsModule],
   template: `
     <main class="login-page">
-      <section class="login-panel">
-        <h1>Slotra Admin</h1>
-        <p>Sign in to manage services, staff, and appointments.</p>
+      <header class="login-topbar">
+        <h1>Slotra</h1>
+        <p>Manage appointment operations with services, staff, and booking activity.</p>
+      </header>
 
-        <form [formGroup]="form" (ngSubmit)="submit()">
-          <label>
-            Email
-            <input type="email" formControlName="email" autocomplete="email">
-          </label>
+      <section class="login-layout">
+        <div class="login-intro">
+          <span>Appointment booking software</span>
+          <h2>Run your schedule with Slotra</h2>
+          <p>
+            Slotra helps appointment-based teams manage services, staff schedules,
+            bookings, and customer communication from one shared system.
+          </p>
+          <img class="login-visual" src="assets/login-appointments.png" alt="Appointment scheduling workspace">
+        </div>
 
-          <label>
-            Password
-            <input type="password" formControlName="password" autocomplete="current-password">
-          </label>
+        <section class="login-panel">
+          <h2>Admin sign in</h2>
+          <p>Sign in to configure services, manage staff, and review daily appointment activity.</p>
 
-          @if (error()) {
-            <div class="error">{{ error() }}</div>
-          }
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <label>
+              Email
+              <input type="email" formControlName="email" autocomplete="email">
+            </label>
 
-          <button type="submit" [disabled]="form.invalid || loading()">
-            {{ loading() ? 'Signing in...' : 'Sign in' }}
-          </button>
-        </form>
+            <label>
+              Password
+              <input type="password" formControlName="password" autocomplete="current-password">
+            </label>
+
+            @if (error()) {
+              <div class="error">{{ error() }}</div>
+            }
+
+            <button type="submit" [disabled]="form.invalid || loading()">
+              {{ loading() ? 'Signing in...' : 'Sign in' }}
+            </button>
+          </form>
+        </section>
       </section>
     </main>
   `

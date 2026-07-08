@@ -357,13 +357,47 @@ Main screens:
 
 ### React Staff Panel
 
+Started in:
+
+```text
+staff-react/
+```
+
+Current first slice:
+
+- Staff login.
+- Staff role guard.
+- Today appointments.
+- All appointments.
+- Appointment search/status filter.
+- Appointment details.
+- Update appointment status to Completed or NoShow.
+- View/add appointment notes.
+- Refresh-token retry support.
+- `react-toastify` notifications.
+- `sweetalert2` confirmations.
+
+Run:
+
+```powershell
+cd staff-react
+npm install
+npm run dev
+```
+
+Open:
+
+```text
+http://127.0.0.1:5174
+```
+
 Main screens:
 
 - Staff login.
 - Today's appointments.
 - Appointment details.
 - Status update.
-- Availability view.
+- Appointment notes.
 
 ### Node Notification Worker
 

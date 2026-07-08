@@ -344,31 +344,43 @@ export default function CustomerHome() {
       </header>
 
       {!token ? (
-        <section className="auth-panel">
-          <div>
-            <h2>{mode === 'login' ? 'Welcome back' : 'Create account'}</h2>
-            <p>{mode === 'login' ? 'Sign in to book and manage appointments.' : 'Register as a customer to start booking.'}</p>
+        <section className="auth-layout">
+          <div className="auth-copy">
+            <span>Appointment booking software</span>
+            <h2>Book with Slotra</h2>
+            <p>
+              Slotra makes it simple to find services, choose the right staff member,
+              reserve a time, and manage upcoming appointments in one place.
+            </p>
+            <img className="login-visual" src="/images/login-appointments.png" alt="Appointment scheduling workspace" />
           </div>
-          <form onSubmit={submitAuth}>
-            {mode === 'register' ? (
+
+          <div className="auth-panel">
+            <div>
+              <h2>{mode === 'login' ? 'Welcome back' : 'Create account'}</h2>
+              <p>{mode === 'login' ? 'Sign in to book and manage appointments.' : 'Register as a customer to start booking.'}</p>
+            </div>
+            <form onSubmit={submitAuth}>
+              {mode === 'register' ? (
+                <label>
+                  Name
+                  <input name="displayName" defaultValue="Slotra Customer" required />
+                </label>
+              ) : null}
               <label>
-                Name
-                <input name="displayName" defaultValue="Slotra Customer" required />
+                Email
+                <input name="email" type="email" defaultValue="customer@slotra.local" required />
               </label>
-            ) : null}
-            <label>
-              Email
-              <input name="email" type="email" defaultValue="customer@slotra.local" required />
-            </label>
-            <label>
-              Password
-              <input name="password" type="password" defaultValue="Customer123!" required />
-            </label>
-            <button type="submit" disabled={busy}>{busy ? 'Please wait...' : mode === 'login' ? 'Sign in' : 'Register'}</button>
-            <button type="button" className="ghost" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>
-              {mode === 'login' ? 'Create an account' : 'Use existing account'}
-            </button>
-          </form>
+              <label>
+                Password
+                <input name="password" type="password" defaultValue="Customer123!" required />
+              </label>
+              <button type="submit" disabled={busy}>{busy ? 'Please wait...' : mode === 'login' ? 'Sign in' : 'Register'}</button>
+              <button type="button" className="ghost" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>
+                {mode === 'login' ? 'Create an account' : 'Use existing account'}
+              </button>
+            </form>
+          </div>
         </section>
       ) : (
         <>

@@ -1,0 +1,335 @@
+:root {
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  align-items: center;
+  background: #176b87;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 14px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button.ghost {
+  background: #e7edf3;
+  color: #172033;
+}
+
+input,
+select,
+textarea {
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  min-height: 40px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+label {
+  color: #475569;
+  display: grid;
+  font-size: 14px;
+  font-weight: 800;
+  gap: 6px;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 28px;
+}
+
+.login-page {
+  align-content: start;
+  display: grid;
+  gap: 58px;
+  min-height: 100vh;
+  max-width: none;
+  justify-items: center;
+  padding: 76px 24px 24px;
+}
+
+.login-topbar,
+.login-layout {
+  width: min(1120px, 100%);
+}
+
+.login-topbar h1,
+.login-topbar p {
+  margin: 0;
+}
+
+.login-topbar h1 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.login-topbar p {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.login-layout {
+  align-items: center;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 430px) minmax(360px, 460px);
+  width: min(960px, 100%);
+}
+
+.login-panel,
+.panel {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.login-panel {
+  display: grid;
+  gap: 18px;
+  max-width: 460px;
+  padding: 30px;
+  box-shadow: 0 24px 80px rgb(15 23 42 / 12%);
+  width: min(460px, 100%);
+}
+
+.login-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.login-copy span,
+.login-card-copy span {
+  color: #176b87;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.login-copy h1 {
+  font-size: 42px;
+  line-height: 1.08;
+}
+
+.login-card-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.login-card-copy h2,
+.login-card-copy p,
+.login-copy h1,
+.login-copy p,
+.login-hint {
+  margin: 0;
+}
+
+.login-copy p,
+.login-card-copy p,
+.login-hint {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.login-visual {
+  aspect-ratio: 16 / 10;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgb(15 23 42 / 10%);
+  margin-top: 10px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.login-panel button {
+  width: 100%;
+}
+
+.login-hint {
+  border-top: 1px solid #e2e8f0;
+  font-size: 13px;
+  padding-top: 14px;
+}
+
+.login-panel form,
+.workspace,
+.panel,
+.list,
+.note-form,
+.notes {
+  display: grid;
+  gap: 14px;
+}
+
+.topbar,
+.tabs,
+.filters,
+.actions {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.tabs {
+  justify-content: flex-start;
+  margin-bottom: 18px;
+}
+
+.tabs button {
+  background: #e7edf3;
+  color: #172033;
+}
+
+.tabs button.active {
+  background: #176b87;
+  color: white;
+}
+
+.workspace {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.filters label {
+  flex: 1;
+}
+
+.appointment-row {
+  align-items: center;
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #172033;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+
+.appointment-row.selected {
+  border-color: #176b87;
+  box-shadow: inset 3px 0 0 #176b87;
+}
+
+.appointment-row span {
+  display: grid;
+  gap: 4px;
+}
+
+.appointment-row small,
+.muted,
+.note span {
+  color: #64748b;
+}
+
+.status {
+  border-radius: 999px;
+  color: #172033;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  padding: 5px 9px;
+}
+
+.status.confirmed {
+  background: #dbeafe;
+}
+
+.status.completed {
+  background: #dcfae6;
+}
+
+.status.cancelled {
+  background: #fee4e2;
+}
+
+.status.noshow {
+  background: #fef0c7;
+}
+
+.summary {
+  display: grid;
+  gap: 10px;
+}
+
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+}
+
+.note {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.note p {
+  margin: 8px 0 0;
+}
+
+@media (max-width: 820px) {
+  main {
+    padding: 18px;
+  }
+
+  .login-page {
+    gap: 34px;
+    padding: 42px 18px 18px;
+  }
+
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-copy h1 {
+    font-size: 34px;
+  }
+
+  .topbar,
+  .tabs,
+  .filters,
+  .actions,
+  .appointment-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+  }
+
+}

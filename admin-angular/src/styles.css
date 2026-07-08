@@ -84,10 +84,78 @@ label {
 }
 
 .login-page {
+  align-content: start;
   display: grid;
+  gap: 58px;
   min-height: 100vh;
-  place-items: center;
-  padding: 24px;
+  max-width: none;
+  padding: 76px 24px 24px;
+}
+
+.login-topbar,
+.login-layout {
+  margin: 0 auto;
+  width: min(1120px, 100%);
+}
+
+.login-topbar h1,
+.login-topbar p {
+  margin: 0;
+}
+
+.login-topbar h1 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.login-topbar p {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.login-layout {
+  align-items: center;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 420px) minmax(360px, 420px);
+  justify-content: center;
+}
+
+.login-intro {
+  display: grid;
+  gap: 12px;
+}
+
+.login-intro span {
+  color: #176b87;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.login-intro h2,
+.login-intro p {
+  margin: 0;
+}
+
+.login-intro h2 {
+  font-size: 40px;
+  line-height: 1.08;
+}
+
+.login-intro p {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.login-visual {
+  aspect-ratio: 16 / 10;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgb(15 23 42 / 10%);
+  margin-top: 10px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .login-panel {
@@ -100,6 +168,7 @@ label {
 }
 
 .login-panel h1,
+.login-panel h2,
 .login-panel p {
   margin: 0;
 }
@@ -458,6 +527,19 @@ form > .actions {
 }
 
 @media (max-width: 860px) {
+  .login-page {
+    gap: 34px;
+    padding-top: 42px;
+  }
+
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-panel {
+    width: min(460px, 100%);
+  }
+
   .admin-shell,
   .split-view,
   .detail-grid,
