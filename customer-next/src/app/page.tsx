@@ -215,7 +215,7 @@ export default function CustomerHome() {
 
     setLoadingAppointments(true);
     try {
-      const items = await withAuth((validToken) => api.myAppointments(validToken));
+      const items = await withAuth((validToken) => api.myAppointments(validToken), authToken);
       setAppointments(items);
     } catch (err) {
       toast.error(errorMessage(err, 'Could not load appointments.'));
@@ -274,9 +274,11 @@ export default function CustomerHome() {
     }
   }
 
-  async function withAuth<T>(operation: (authToken: string) => Promise<T>): Promise<T> {
+  async function withAuth<T>(operation: (authToken: string) => Promise<T>, tokenOverride?: string): Promise<T> {
+    const activeToken = tokenOverride || token;
+
     try {
-      return await operation(token);
+      return await operation(activeToken);
     } catch (err) {
       if (!refreshToken) {
         throw err;
