@@ -243,7 +243,41 @@ The source DTO should be a normal class, not a positional record. If the source 
 
 ### Angular Admin Dashboard
 
-Build first after backend stabilization.
+Started in:
+
+```text
+admin-angular/
+```
+
+Current first slice:
+
+- Login page.
+- JWT auth service.
+- Auth interceptor.
+- Admin route guard.
+- Protected admin shell layout.
+- Dashboard summary page.
+- Services CRUD page.
+
+Run after Node/npm is healthy:
+
+```powershell
+cd admin-angular
+npm install
+npm start
+```
+
+Open:
+
+```text
+http://localhost:4200
+```
+
+The admin portal expects the backend API at:
+
+```text
+https://localhost:44301/api/v1
+```
 
 Main screens:
 

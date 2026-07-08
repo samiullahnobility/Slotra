@@ -1,4 +1,43 @@
+# IDE
 .vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET
 bin/
 obj/
-*.user
+TestResults/
+*.nupkg
+*.snupkg
+coverage/
+coverage.*
+
+# Angular / Node
+node_modules/
+dist/
+.angular/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Environment and local config
+.env
+.env.*
+*.local
+appsettings.Local.json
+appsettings.*.Local.json
+
+# Logs and temp files
+logs/
+*.log
+*.tmp
+*.temp
+Thumbs.db
+Desktop.ini
