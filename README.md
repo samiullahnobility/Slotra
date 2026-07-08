@@ -305,6 +305,46 @@ Main screens:
 
 ### Next.js Customer Portal
 
+Started in:
+
+```text
+customer-next/
+```
+
+Customer portal status: complete for MVP.
+
+- Customer login/register.
+- Browse bookable services.
+- Select staff for a service.
+- Select date and available slot.
+- Book appointment.
+- View my appointments.
+- Cancel appointment.
+- Reschedule appointment.
+- Book/My Appointments tabs.
+- Service search.
+- Appointment status badges.
+- Loading states for staff, slots, and appointments.
+- Refresh-token retry support.
+- Customer role guard.
+- `react-toastify` for notifications.
+- `sweetalert2` for cancel confirmation.
+- Environment-based API URL.
+
+Run:
+
+```powershell
+cd customer-next
+npm install
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
 Main screens:
 
 - Register/login.
